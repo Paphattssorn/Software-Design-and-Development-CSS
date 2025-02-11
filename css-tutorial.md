@@ -1,4 +1,4 @@
-# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
+![image](https://github.com/user-attachments/assets/b88f01ab-2a5b-4849-afd6-16258e11dcb3)![image](https://github.com/user-attachments/assets/aebee874-9acb-4f97-ba11-e82e674a857d)# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
 [](#การทดลองที่-1-ทำความรู้จักกับ-css)
 ## การทดลองที่ 1: ทำความรู้จักกับ CSS
 
@@ -232,9 +232,63 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* การใช้ Element Selector */
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        /* การใช้ Descendant Selector */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* การใช้ Child Selector */
+        nav > ul > li {
+            margin: 0 10px;
+        }
+
+        /* การใช้ Class Selector */
+        .menu-item {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        /* การใช้ Pseudo-class */
+        .menu-item:hover {
+            background-color: #4c4fce;
+            border-radius: 3px;
+        }
+
+        /* การใช้ ID Selector */
+        #active {
+            background-color: #8b8a44;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item" id="active">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![1](https://github.com/user-attachments/assets/2bdea290-f13c-437c-878b-53f498c6f441)
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
@@ -338,9 +392,150 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css-workshop/style.css">
+</head>
+<body>
+
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/html-workshop/images/1.jpg" alt="ข้าวผัดสัปปะรด">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">ข้าวผัดสัปปะรด</h2>
+                <p class="product-price">฿50</p>
+                <p class="product-description">ข้าวผัดหอมๆ ใส่สัปปะรดและเครื่องเทศ</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/html-workshop/images/2.jpg" alt="กะเพราหมูสับ">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">กะเพราหมูสับ</h2>
+                <p class="product-price">฿60</p>
+                <p class="product-description">กะเพราหมูสับ</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/html-workshop/images/3.jpg" alt="ข้าวหมูทอดกระเทียม">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">ข้าวหมูทอดกระเทียม</h2>
+                <p class="product-price">฿ุ65</p>
+                <p class="product-description">ข้าวหมูทอดกระเทียม</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="/html-workshop/images/4.jpg" alt="คะน้าหมูกรอบ">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">คะน้าหมูกรอบ</h2>
+                <p class="product-price">฿70</p>
+                <p class="product-description">คะน้าหมูกรอบ</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+```
+```css
+body {
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    background-color: #f8f9fa;
+}
+
+.product-container {
+    display: flex; /* ใช้ Flexbox */
+    flex-wrap: wrap; /* ให้เลื่อนขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
+    justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+    gap: 20px; /* ระยะห่างระหว่างสินค้า */
+    padding: 20px;
+}
+
+
+.product-card {
+    display: inline-block; /* ทำให้สินค้าเรียงต่อกัน */
+    width: 250px; /* กำหนดขนาดสินค้า */
+    margin: 10px; /* กำหนดระยะห่างระหว่างสินค้า */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ปรับให้รูปไม่ถูกตัดขอบ */
+}
+ 
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.product-button {
+    display: block;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.product-button:hover {
+    background: linear-gradient(to right, #0056b3, #003980);
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![2](https://github.com/user-attachments/assets/f7c36030-9450-4aa6-926c-964c92e97272)
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
@@ -436,12 +631,78 @@ border: 1px solid black;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css-workshop/style.css">
+</head>
+<body>
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-number">1,234</div>
+            <div class="stat-label">ผู้ใช้งาน</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">5.6K</div>
+            <div class="stat-label">ยอดขาย</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">ความพึงพอใจ</div>
+        </div>
+    </div>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 10rem;
+}
+
+.stat-box {
+    flex: 1;
+    margin: 0 30px;
+    padding: 2rem;
+    text-align: center;
+    background-color: #a1a1a1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #8a2be2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #ffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        margin: 1rem 0;
+    }
+}
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![3](https://github.com/user-attachments/assets/6099e43a-663a-4e84-aa4c-2c8e0c347304)
 
 [](#การทดลองที่-5-การจัดการข้อความและฟอนต์)
 ## การทดลองที่ 5: การจัดการข้อความและฟอนต์
@@ -554,12 +815,136 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>วิธีการเขียนบทความที่น่าสนใจ</title>
+    <link rel="stylesheet" href="/css-workshop/style.css"> <!-- เพิ่มลิงก์ไปยังไฟล์ CSS ถ้าคุณใช้ -->
+</head>
+<body>
+    <article class="blog-post">
+        <header class="post-header">
+            <h1 class="post-title">วิธีการเขียนบทความที่น่าสนใจ</h1>
+            <div class="post-meta">โพสต์เมื่อ 11/2/2025 | โดย ปภัสสร เอี่ยมสอาด</div>
+        </header>
+        
+        <div class="post-content">
+            <p>เนื้อหาบทความที่ดีควรมีความน่าสนใจและเป็นประโยชน์ต่อผู้อ่าน การเขียนบทความให้น่าอ่านนั้นมีหลักการสำคัญหลายประการ</p>
+
+            <h2>1. การเลือกหัวข้อที่น่าสนใจ</h2>
+            <p>หัวข้อที่ดีควรตรงกับความสนใจของกลุ่มเป้าหมาย และมีประโยชน์ต่อผู้อ่าน</p>
+
+            <blockquote>
+                "การเขียนที่ดีไม่ได้เกิดจากพรสวรรค์เพียงอย่างเดียว แต่เกิดจากการฝึกฝนอย่างสม่ำเสมอ"
+            </blockquote>
+
+            <h2>2. การจัดโครงสร้างเนื้อหา</h2>
+            <p>เนื้อหาที่ดีควรมีการจัดลำดับที่เป็นระบบ เข้าใจง่าย และมีความต่อเนื่อง</p>
+        </div>
+    </article>
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+ .blog-post {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: 'Sarabun', sans-serif;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .post-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        color: #b10b0b;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+        font-weight: bold;
+    }
+
+    .post-meta {
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #000000;
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.8rem;
+        color: #5c1d59;
+        margin: 2rem 0 1rem;
+    }
+
+    blockquote {
+        font-style: italic;
+        border-left: 4px solid #007bff;
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+        color: #000000;
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-content {
+            font-size: 1rem;
+        }
+
+        .post-meta {
+            font-size: 0.8rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .post-title {
+            font-size: 1.8rem;
+        }
+
+        .post-meta {
+            font-size: 0.75rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.4rem;
+        }
+    }
+
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![4](https://github.com/user-attachments/assets/b1197e09-7c9b-4c40-abc0-73ee7fe5f705)
 
 [](#การทดลองที่-6-Layout-และการจัดวางอิลิเมนต์)
 ## การทดลองที่ 6: Layout และการจัดวางอิลิเมนต์
@@ -701,13 +1086,210 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-details {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .product-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-grid">
+        <!-- สินค้าชิ้นที่ 1 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('/css-workshop/image/1.jpg')"></div>
+            <div class="product-details">
+                <h3 class="product-title">สินค้าตัวอย่างที่ 1</h3>
+                <div class="product-price">฿999</div>
+                <div class="product-action">
+                    <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- สินค้าชิ้นที่ 2 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('/css-workshop/image/2.jpg')"></div>
+            <div class="product-details">
+                <h3 class="product-title">สินค้าตัวอย่างที่ 2</h3>
+                <div class="product-price">฿999</div>
+                <div class="product-action">
+                    <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- เพิ่มสินค้าอื่นๆ ตามต้องการ -->
+    </div>
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+ .blog-post {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: 'Sarabun', sans-serif;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .post-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        color: #b10b0b;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+        font-weight: bold;
+    }
+
+    .post-meta {
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #000000;
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.8rem;
+        color: #5c1d59;
+        margin: 2rem 0 1rem;
+    }
+
+    blockquote {
+        font-style: italic;
+        border-left: 4px solid #007bff;
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+        color: #000000;
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-content {
+            font-size: 1rem;
+        }
+
+        .post-meta {
+            font-size: 0.8rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .post-title {
+            font-size: 1.8rem;
+        }
+
+        .post-meta {
+            font-size: 0.75rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.4rem;
+        }
+    }
+
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
-
+![5](https://github.com/user-attachments/assets/1fde6c8b-ed5a-4d3f-9a59-816aa936397d)
 
 ### ตัวอย่างการใช้งาน: การสร้างเลย์เอาต์ Modern Dashboard
 
@@ -854,10 +1436,209 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css-workshop/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>แดชบอร์ด</h1>
+            <nav>
+                <button>โปรไฟล์</button>
+                <button class="logout-button">ออกจากระบบ</button>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li>หน้าแรก</li>
+                    <li>รายงาน</li>
+                    <li>การตั้งค่า</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>ยอดขายรวม</h3>
+                    <p>฿150,000</p>
+                </div>
+                <div class="stat-card">
+                    <h3>จำนวนออเดอร์</h3>
+                    <p>1,234</p>
+                </div>
+                <div class="stat-card">
+                    <h3>ลูกค้าใหม่</h3>
+                    <p>45</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart">
+                    <h3>กราฟแสดงยอดขาย</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+                <div class="chart">
+                    <h3>สัดส่วนสินค้าขายดี</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+.dashboard {
+    display: grid;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    background: #ecf0f3;
+}
+
+.header {
+    grid-area: header;
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #34495e;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+    grid-area: main;
+    padding: 1.5rem;
+    background: #ecf0f3;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.chart {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-areas: 
+            "header"
+            "main";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .chart-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    font-size: 1rem; /* เพิ่มขนาดตัวอักษร */
+    padding: 12px 20px; /* เพิ่มระยะ padding */
+    margin: 5px 0; /* ระยะห่างรอบปุ่ม */
+    border: none;
+    border-radius: 10px; /* เพิ่มความโค้งมน */
+    cursor: pointer;
+    background-color: #007bff; /* สีพื้นหลัง (น้ำเงิน) */
+    color: white; /* สีข้อความ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #0056b3; /* สีเมื่อ hover (น้ำเงินเข้มขึ้น) */
+    transform: translateY(-2px); /* เลื่อนขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อ hover */
+}
+.header nav button:last-child {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.header nav button:last-child:hover {
+    background-color: darkred;
+}
+
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![6](https://github.com/user-attachments/assets/50138945-6220-453a-99c8-91169175b6d9)
 
