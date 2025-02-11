@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b88f01ab-2a5b-4849-afd6-16258e11dcb3)![image](https://github.com/user-attachments/assets/aebee874-9acb-4f97-ba11-e82e674a857d)# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
+# ใบงานการทดลอง: พื้นฐานการจัดการรูปแบบเว็บไซต์ด้วย CSS
 [](#การทดลองที่-1-ทำความรู้จักกับ-css)
 ## การทดลองที่ 1: ทำความรู้จักกับ CSS
 
